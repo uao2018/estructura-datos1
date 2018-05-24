@@ -1,0 +1,291 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+% Fonts
+%\usepackage{epstopdf}
+%\usepackage[T1]{fontenc}
+%\usepackage{ae,aecompl}
+
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+% Listing
+\usepackage{listings}
+\usepackage{color}
+\definecolor{eclipseBlue}{RGB}{42,0.0,255}
+\definecolor{eclipseGreen}{RGB}{63,127,95}
+\definecolor{eclipsePurple}{RGB}{127,0,85}
+\lstset{
+  language={C},
+  basicstyle=\scriptsize\ttfamily, % Global Code Style
+  captionpos=b, % Position of the Caption (t for top, b for bottom)
+  extendedchars=true, % Allows 256 instead of 128 ASCII characters
+  tabsize=2, % number of spaces indented when discovering a tab 
+  columns=fixed, % make all characters equal width
+ % keepspaces=true, % does not ignore spaces to fit width, convert tabs to spaces
+  showstringspaces=false, % lets spaces in strings appear as real spaces
+  breaklines=true, % wrap lines if they don't fit
+  frame=trbl, % draw a frame at the top, right, left and bottom of the listing
+  frameround=tttt, % make the frame round at all four corners
+  framesep=4pt, % quarter circle size of the round corners
+  %numbers=false, % show line numbers at the left
+  numberstyle=\scriptsize\ttfamily, % style of the line numbers
+  commentstyle=\color{eclipseGreen}, % style of comments
+  keywordstyle=\color{blue}, % style of keywords
+  stringstyle=\color{red}, % style of strings
+  numberstyle={\ifnum\value{lstnumber}=5 \color{red}\fi}
+}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 2cm
+\rightmargin 1.5cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language french
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Taller de Segundo Corte:
+\begin_inset Newline newline
+\end_inset
+
+Recursión, Ordenamiento y Búsquedas
+\end_layout
+
+\begin_layout Author
+Prof.
+ Luis Garreta
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Curso de Estructuras de Datos y Algoritmos I
+\begin_inset Newline newline
+\end_inset
+
+
+\series medium
+Universidad Autonoma de Occidente – Cali 
+\begin_inset Newline newline
+\end_inset
+
+Depto.
+ Operaciones y Sistemas
+\begin_inset Newline newline
+\end_inset
+
+Facultad de Ingeniería
+\end_layout
+
+\begin_layout Enumerate
+Muestre paso a paso como se realiza el ordenamiento del arreglo A: [6,3,2,7,4,1,
+5] por los algoritmos de MergeSort, QuickSort, BubbleSort, SelectionSort,
+ e InsertionSort: A: [6,3,2,7,4,1,5]
+\end_layout
+
+\begin_layout Enumerate
+Lo mismo que el punto anterior pero ahora para la cadena 
+\series bold
+"colombia"
+\series default
+.
+ Asuma un orden lexicográfico (a..z) y que la cadena empieza en la posición
+ 0, es decir suponga el arreglo de caracteres A: ['c','o','l','o','m','b','i','a
+']
+\end_layout
+
+\begin_layout Enumerate
+Realice el seguimiento de los llamados recursivos del algoritmo de ordenamiento
+ MergeSort cuando ordena el arreglo A: [5,2,1,4,3]
+\end_layout
+
+\begin_layout Enumerate
+Implemente una función recursiva que dado como entrada una cadena de caracteres
+ determine si está es palindrome o no.
+ Una cadena palindrome es aquella que se puede leer igual de izquierda a
+ derecha como de derecha a izquierda.
+ Por ejemplo: "OSO", "AEREA", "AVIVA", "SELLES", "SARRAS".
+ El prototipo de la función es el siguiente:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+static boolean esPalindrome (String palabra, int ini, int fin)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde ini y fin son las posiciones inicial y final desde donde se van a
+ comparar los arreglos, que al principio serían 0 y n-1, si los arreglos
+ tienen n elementos
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Implemente una función recursiva que retorne true/false si dos arreglos
+ de la misma longitud son iguales.
+ El prototipo de la función es el siguiente:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+static boolean igualesArreglos (int [] A1, int [] A2, int ini, int fin)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde ini y fin son las posiciones inicial y final desde donde se van a
+ comparar los arreglos, que al principio serían 0 y n-1, si los arreglos
+ tienen n elementos.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Los algoritmos de búsqueda más usados son la binaria y la secuencial.
+ La binaria es más eficiente cuando la cantidad de datos es muy grande,
+ mientras que la secuencial es más eficiente cuando son pocos datos.
+ Teniendo en cuenta lo anterior, es decir, cuando los datos sean menores
+ que un valor M, la búsqueda se hace de forma secuencial, de lo contrario
+ se hace binaría, diseñe un nuevo algoritmo de búsqueda recursivo que combine
+ las dos ideas (secuencial y binaria).
+ Al algoritmo le ingresa un arreglo A, las posiciones INI y FIN donde inicia
+ y termina la búsqueda, el elemento ELEM a buscar, y el valor M para realizar
+ la búsqueda secuencial.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Por ejemplo: suponga que al algoritmo le ingresa una arreglo de cadana A={"casa"
+, "jarro",....,"xerox", "zorro",}, INI=0, FIN=100 millones, y M=10000.
+ Este debería iniciar partiendo el arreglo de 100 millones hasta que en
+ algún momento se forme un subarreglo de 10000 elementos, en ese preciso
+ momento se debería realizar la búsqueda secuencial sobre los 10000 elementos
+ y retornar la respuesta de si está el elemento o no en ese subarreglo.
+ Si el elemento está, entonces termina la búsqueda y retorna la posición
+ donde lo encontró, y si no está debería continuar la búsqueda de acuerdo
+ a la lógica de la búsqueda binaria.
+ Al final, si no lo encuentra en ningún lado debería retorna -1.
+ El prototipo de la función es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+static int busquedaIterRecursiva (int [] A, int INI, int FIN, int ELEM,
+ int M)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Realice el seguimiento (como se están llevando los llamados recursivos)
+ para el llamado del algoritmo anterior con los siguientes valores: A={1,2,3,4,5
+,6,7,8,9,10,11,12}, INI=0, FIN=7, ELEM=5, y M=3.
+\end_layout
+
+\end_body
+\end_document
